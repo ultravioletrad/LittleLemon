@@ -22,7 +22,7 @@ from restaurant.views import home, BookingViewSet, MenuViewSet, UserViewSet
 router = routers.DefaultRouter()
 router.register(r'tables', BookingViewSet)
 router.register(r'users', UserViewSet)
-router.register(r'menu', MenuViewSet)
+router.register(r'menu-items', MenuViewSet)
 
 
 
@@ -31,4 +31,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('restaurant.urls')),
     path('restaurant/booking/', include(router.urls)),
+    path('', include('restaurant.urls')),
+   
 ]
