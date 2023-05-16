@@ -8,15 +8,13 @@ from .views import BookingViewSet, MenuViewSet
 
 
 router = routers.DefaultRouter()
-router.register(r'menu-items', MenuViewSet)
+router.register(r'menu-items', MenuViewSet, basename='menu-items')
+
 
 urlpatterns = [
-    
-    path('menu-items/', MenuViewSet.as_view({'get': 'list'}), name='menu-items'),
-    path('menu-items/<int:pk>/', MenuViewSet.as_view({'get': 'retrieve'}), name='single-menu-item'),
+
     path('message/', views.msg, name='message'),
     path('api-token-auth/', obtain_auth_token),
     path('', include(router.urls)),
-
 
 ]

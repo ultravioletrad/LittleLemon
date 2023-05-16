@@ -24,13 +24,10 @@ router.register(r'tables', BookingViewSet)
 router.register(r'users', UserViewSet)
 router.register(r'menu-items', MenuViewSet)
 
-
-
 urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('api/', include('restaurant.urls')),
     path('restaurant/booking/', include(router.urls)),
     path('', include('restaurant.urls')),
-   
 ]
